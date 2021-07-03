@@ -180,16 +180,14 @@ cap.release()
 cv2.destroyAllWindows() 
 
 import tensorflow as tf
-print('2')
-print(tf.version.VERSION) 
+#print('2')
+#print(tf.version.VERSION)
 from tensorflow.keras.models import load_model
 detector=load_model(r'C:\Users\HP\Documents\dummy.model')
 import tensorflow as tf
 import numpy
 import cv2
 cap=cv2.VideoCapture(0)
-print('3')
-
 classifier=cv2.CascadeClassifier(r'C:/Users/HP/Documents/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml')
 while True:
     (success, frame) = cap.read()  #reading the frame from the stream 
@@ -209,7 +207,7 @@ while True:
             
         if label == 0:
             cv2.rectangle(new_image,(x,y),(x+w,y+h),(0,255,0),2)
-            cv2.putText(new_image,"mask",(x,y),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,255,0), 2)
+            cv2.putText(new_image," mask",(x,y),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,255,0), 2)
         elif label == 1:
             cv2.rectangle(new_image,(x,y),(x+w,y+h),(0,0,255),2)
             cv2.putText(new_image,'no_mask',(x,y),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,0,255), 2)
