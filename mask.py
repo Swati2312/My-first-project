@@ -78,7 +78,7 @@ cv2.imshow("original image",img)
 cv2.imshow("Re-sized image",img_resize)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-"""
+
 img=cv2.imread('C:/Users/HP/Pictures/swati.jpg')
 cv2.imshow('output',img)
 imgCropped=img[0:200,300:500]
@@ -86,7 +86,7 @@ cv2.imshow("cropped image",imgCropped)
 print(img.shape)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-"""
+
 #0 mean black
 img=np.zeros((512,512))
 cv2.imshow('0',img)
@@ -130,7 +130,7 @@ for (x,y,w,h) in faces:
 cv2.imshow("Output",img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-"""
+
 cap=cv2.VideoCapture(0)
 faceCascade=cv2.CascadeClassifier("C:/Users/HP/Documents/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml")
 while True:
@@ -143,7 +143,7 @@ while True:
     if cv2.waitKey(1)==ord('q'):
         break
 cap.release()
-cv2.destroyAllWindows()"""
+cv2.destroyAllWindows()
 
 import numpy as np
 import cv2
@@ -180,7 +180,6 @@ cap.release()
 cv2.destroyAllWindows() 
 
 import tensorflow as tf
-#print('2')
 #print(tf.version.VERSION)
 from tensorflow.keras.models import load_model
 detector=load_model(r'C:\Users\HP\Documents\dummy.model')
@@ -216,7 +215,7 @@ while True:
     #displaying the window after predicting the outcome
     cv2.imshow('face_window', new_image)
     
-    #print(numpy.argmax(score), 100*numpy.max(score))
+    print(numpy.argmax(score), 100*numpy.max(score))
     #waitkey to terminate the loop
     key = cv2.waitKey(10) 
     if key == ord('q'):
